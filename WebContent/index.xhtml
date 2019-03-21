@@ -1,13 +1,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html"
+   	xmlns:h="http://java.sun.com/jsf/html"
     xmlns:f="http://java.sun.com/jsf/core"
     xmlns:p="http://primefaces.org/ui">
      
     <h:head>
+    
     </h:head>
  
     <h:body>
         <p:spinner />
-        <h:outputText value="::TEST OK::" />
+        <p:growl id="messages" showDetail="true"/>
+        <h:outputText value="::TEST OK::" /><br/>
+
+        <h:form>
+        <p:commandButton value="With Icon" id="withIcon" action="#{buttonView.save}" update="messages" style="margin-right:20px;" icon="pi pi-save" />
+        </h:form>
     </h:body>
 </html>

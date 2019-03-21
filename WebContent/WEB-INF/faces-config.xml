@@ -4,5 +4,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
     version="2.3">
-
+	<managed-bean>
+		<description>teste</description>
+		<managed-bean-name>buttonView</managed-bean-name>
+		<managed-bean-class>br.com.ger1001Questoes.components.ButtonView</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
 </faces-config>
