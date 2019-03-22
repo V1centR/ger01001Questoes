@@ -23,7 +23,12 @@
         </h:form><br/><br/>
         
          <ui:repeat value="#{generateExam.exame}" var="item">
-            <h:outputText value="#{item}" /><br/>
+            
+            <ui:repeat value="#{item}" var="current">
+            	<h:outputText value="#{current}" /><br/>
+            </ui:repeat>
+            
+            
         </ui:repeat>
         
         <ui:repeat value="#{buttonView.items}" var="item">

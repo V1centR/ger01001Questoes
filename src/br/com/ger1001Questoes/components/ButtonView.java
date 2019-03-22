@@ -43,10 +43,6 @@ public class ButtonView {
 		 
 	 }
 
-//	  public void CartBean() {
-//	   
-//	  }
-
 	  public List<String> getItems() {
 	    return items;
 	  }
