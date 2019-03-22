@@ -1,6 +1,9 @@
 package br.com.ger1001Questoes.components;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -15,13 +18,13 @@ import org.primefaces.model.menu.MenuModel;
 public class ButtonView {
 	
 	 private MenuModel model;
+	 private List<String> items;
 	 
 	 @PostConstruct
 	 public void init() {
 		 
 		 model = new DefaultMenuModel();
-		 
-		 //DefaultMenuItem item = new DefaultMenuItem("External");
+
 		 DefaultMenuItem item = new DefaultMenuItem("External");
 		 DefaultSubMenu secondSubmenu = new DefaultSubMenu("Dynamic Actions");
 		 
@@ -31,9 +34,22 @@ public class ButtonView {
 	     item.setUpdate("messages");
 	     secondSubmenu.addElement(item);
 	     
+	     items = new ArrayList<>();
+	     items.add("shirt");
+	     items.add("skirt");
+	     items.add("trouser");
+	     
 	     model.addElement(secondSubmenu);
 		 
 	 }
+
+//	  public void CartBean() {
+//	   
+//	  }
+
+	  public List<String> getItems() {
+	    return items;
+	  }
 	 
 	 public MenuModel getModel() {
 	        return model;

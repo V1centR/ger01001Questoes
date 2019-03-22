@@ -1,9 +1,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
    	xmlns:h="http://java.sun.com/jsf/html"
     xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:p="http://primefaces.org/ui">
-     
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
+    
+    <style type="text/css">
+    .ui-panelgrid .ui-grid-responsive .ui-panelgrid-cell {
+        text-align: center;
+    }
+</style>
     
     </h:head>
  
@@ -14,6 +20,188 @@
 
         <h:form>
         <p:commandButton value="With Icon" id="withIcon" action="#{buttonView.save}" update="messages" style="margin-right:20px;" icon="pi pi-save" />
-        </h:form>
+        </h:form><br/><br/>
+        
+         <ui:repeat value="#{generateExam.exame}" var="item">
+            <h:outputText value="#{item}" /><br/>
+        </ui:repeat>
+        
+        <ui:repeat value="#{buttonView.items}" var="item">
+            <h:commandButton value="#{item}" /><br/>
+        </ui:repeat> 
+
+	<p:panelGrid style="margin-top:20px">
+    <f:facet name="header">
+        <p:row>
+            <p:column colspan="70">Generate 1001 questions book</p:column>
+        </p:row>
+ 
+    </f:facet>
+ 
+    <p:row>
+        <p:column><strong>Português</strong></p:column>
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >04</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >05</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >10</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >20</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        <p:column >30</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+        
+        
+        
+        
+    </p:row>
+    
+     <p:row>
+        <p:column><strong>Adm Financeira</strong></p:column>
+     
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+     
+      <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+     
+      <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+     
+     
+      <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+     
+     
+     </p:row>
+     
+     <p:row>
+        <p:column><strong>RLM</strong></p:column>
+     
+        <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+     
+      <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+     
+      <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+     
+     
+      <p:column >12</p:column>
+        <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+     
+     
+     </p:row>
+     
+     <p:row>
+        <p:column><strong>Dir Penal</strong></p:column>
+     
+      <p:column >12</p:column>
+      <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+     
+      <p:column >12</p:column>
+      <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+     
+      <p:column >12</p:column>
+      <p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+     
+      <p:column >12</p:column>
+      <p:column><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
+     
+     </p:row>
+ 
+    <f:facet name="footer">
+        <p:row>
+            <p:column  colspan="70" style="text-align: left">
+                Top Scorer
+            </p:column>
+        </p:row>
+    </f:facet>
+</p:panelGrid>
+        
     </h:body>
 </html>
