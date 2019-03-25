@@ -1,8 +1,10 @@
 package br.com.ger1001Questoes.components;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import javax.annotation.PostConstruct;
@@ -38,6 +40,12 @@ public class GenerateExam {
 	String[] disciplinas = new String[8];
 	int[][] prova = new int[8][30];
 	
+	//private ArrayList<List> exameToFront;
+	
+	HashMap<String, List> mapExame = new HashMap<String, List>();
+//	private Map<String, Object> map;
+//	private List<String> keyList = new ArrayList<String>(map.keySet());
+	
 	@SuppressWarnings("rawtypes")
 	private ArrayList<List> exame;
 	
@@ -68,49 +76,53 @@ public class GenerateExam {
 			case "port":
 				
 				List items = randGenerate(portugues,portRange);
-				exame.add(items);
+				//exame.add(items);
+				mapExame.put("Língua Portuguesa", items);
+				//exame.set(0, items);
 				break;
 				
 			case "afo":
 				List itemsAfo = randGenerate(afo,afoRange);
-				exame.add(itemsAfo);
+				//exame.add(itemsAfo);
+				mapExame.put("AFO", itemsAfo);
 				break;
-				
-			case "info":
-				System.out.println("Exec info");
-				List itemsInfo = randGenerate(info,infoRange);
-				exame.add(itemsInfo);
-				break;
-
-			case "rlm":
-				System.out.println("Exec rlm");
-				List itemsRlm = randGenerate(rlm,rlmRange);
-				exame.add(itemsRlm);
-				break;
-				
-			case "dirPen":
-				System.out.println("Exec dirPen");
-				List itemsDp = randGenerate(dirPen,dirPenRange);
-				exame.add(itemsDp);
-				break;
-				
-			case "dirProc":
-				System.out.println("Exec dirProc");
-				List itemsDirProc = randGenerate(dirProc,dirProcRange);
-				exame.add(itemsDirProc);
-				break;
-				
-			case "dirConst":
-				System.out.println("Exec dirConst");
-				List itemsdirConst = randGenerate(dirConst,dirConstRange);
-				exame.add(itemsdirConst);
-				break;
-				
-			case "dirAdm":
-				System.out.println("Exec dirAdm");
-				List itemsdirAdm = randGenerate(dirAdm,dirAdmRange);
-				exame.add(itemsdirAdm);
-				break;
+//				
+//			case "info":
+//				System.out.println("Exec info");
+//				List itemsInfo = randGenerate(info,infoRange);
+//				exame.add(itemsInfo);
+//				break;
+//
+//			case "rlm":
+//				System.out.println("Exec rlm");
+//				List itemsRlm = randGenerate(rlm,rlmRange);
+//				exame.add(itemsRlm);
+//				break;
+//				
+//			case "dirPen":
+//				System.out.println("Exec dirPen");
+//				List itemsDp = randGenerate(dirPen,dirPenRange);
+//				exame.add(itemsDp);
+//				break;
+//				
+//			case "dirProc":
+//				System.out.println("Exec dirProc");
+//				List itemsDirProc = randGenerate(dirProc,dirProcRange);
+//				exame.add(itemsDirProc);
+//				break;
+//				
+//			case "dirConst":
+//				System.out.println("Exec dirConst");
+//				List itemsdirConst = randGenerate(dirConst,dirConstRange);
+//				exame.add(itemsdirConst);
+//				//exame.set(1, itemsdirConst);
+//				break;
+//				
+//			case "dirAdm":
+//				System.out.println("Exec dirAdm");
+//				List itemsdirAdm = randGenerate(dirAdm,dirAdmRange);
+//				exame.add(itemsdirAdm);
+//				break;
 			}
 		}
 		
@@ -136,17 +148,27 @@ public class GenerateExam {
 		for(int i = 0; i<qtd; i++) {
 			currentItem = randomnum.nextInt(range);
 			
-			while(itemsLista.contains(currentItem)) {
+			while(itemsLista.contains(currentItem) || itemsLista.contains(0)) {
 				currentItem = randomnum.nextInt(range);
 			}
 			itemsLista.add(currentItem);
 			items.add(currentItem);
 		}
+		
 		return items;
 	}
 	
 	public ArrayList<List> getExame(){
 		return exame;
+	}
+	
+	public String[] getDisciplinas(){
+		return disciplinas;
+	}
+	
+	//mapExame
+	public HashMap<String, List> getMapExame(){
+		return mapExame;
 	}
 
 }
