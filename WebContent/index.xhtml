@@ -4,56 +4,48 @@
     xmlns:p="http://primefaces.org/ui"
     xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
-    
-    <style type="text/css">
+    </h:head>
+ <style type="text/css">
     .ui-panelgrid .ui-grid-responsive .ui-panelgrid-cell {
         text-align: center;
+        background-color: #ff0000;
     }
 </style>
-    
-    </h:head>
- 
     <h:body>
-        <p:spinner />
-        <p:growl id="messages" showDetail="true"/>
 
-        <h:form>
-        <p:commandButton value="With Icon" id="withIcon" action="#{buttonView.save}" update="messages" style="margin-right:20px;" icon="pi pi-save" />
-        </h:form><br/><br/>
-        
-       
-       <ui:repeat var="item" value="#{generateExam.mapExame.entrySet().toArray()}">
-        	#{item.key} == #{item.value}<br/>
-            
-        </ui:repeat>
+	<ui:repeat var="exames" value="#{generateExam.multipleExam}">
+	<!--Multiples exames ########## -->
+	
+		<p:panelGrid style="margin-top:20px">
+	    <f:facet name="header">
+	        <p:row>
+	            <p:column colspan="70">Generate 1001 questions book</p:column>
+	        </p:row>
+	 
+	    </f:facet>
+	    
+	     <ui:repeat var="item" value="#{exames.entrySet().toArray()}">
+	        	<p:row>
+		        	<p:column><strong>#{item.key}</strong></p:column>
+		        	<ui:repeat var="questions" value="#{item.value}">
+		        		<p:column><div style="width: 30px; height:25px; text-align: center; padding-top: 8px;"><strong>#{questions}</strong></div></p:column>
+		        		<p:column><div style="width: 30px; height:30px;"></div></p:column>
+		        	</ui:repeat>
+	        	</p:row>
+	     </ui:repeat>
+	 
+	    <f:facet name="footer">
+	        <p:row>
+	            <p:column  colspan="70" style="text-align: left">
+	                Top Scorer
+	            </p:column>
+	        </p:row>
+	    </f:facet>
+	</p:panelGrid>
 
-	<p:panelGrid style="margin-top:20px">
-    <f:facet name="header">
-        <p:row>
-            <p:column colspan="70">Generate 1001 questions book</p:column>
-        </p:row>
- 
-    </f:facet>
-    
-     <ui:repeat var="item" value="#{generateExam.mapExame.entrySet().toArray()}">
-        	<p:row>
-	        	<p:column>#{item.key}</p:column>
-	        	<ui:repeat var="questions" value="#{item.value}">
-	        		<p:column ><strong>#{questions}</strong></p:column>
-	        		<p:column ><h:graphicImage style="width:30px;" library="images" name="unchecked_box.png"/></p:column>
-	        	</ui:repeat>
-        	</p:row>
-     </ui:repeat>
-    
- 
-    <f:facet name="footer">
-        <p:row>
-            <p:column  colspan="70" style="text-align: left">
-                Top Scorer
-            </p:column>
-        </p:row>
-    </f:facet>
-</p:panelGrid>
+<!--#################3 -->
+</ui:repeat>
+
         
     </h:body>
 </html>

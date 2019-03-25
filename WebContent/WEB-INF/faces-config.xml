@@ -8,12 +8,12 @@
 		<description>teste</description>
 		<managed-bean-name>buttonView</managed-bean-name>
 		<managed-bean-class>br.com.ger1001Questoes.components.ButtonView</managed-bean-class>
-		<managed-bean-scope>view</managed-bean-scope>
+		<managed-bean-scope>application</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
 		<description>1001</description>
 		<managed-bean-name>generateExam</managed-bean-name>
 		<managed-bean-class>br.com.ger1001Questoes.components.GenerateExam</managed-bean-class>
-		<managed-bean-scope>view</managed-bean-scope>
+		<managed-bean-scope>application</managed-bean-scope>
 	</managed-bean>
 </faces-config>

@@ -1,5 +1,6 @@
 package br.com.ger1001Questoes.components;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -38,13 +39,18 @@ public class GenerateExam {
 	private Integer dirAdmRange = 60;
 	
 	String[] disciplinas = new String[8];
-	int[][] prova = new int[8][30];
+	
+	private ArrayList<HashMap> multipleExam = new ArrayList<HashMap>(); 
+	
+	//int[][] prova = new int[8][30];
 	
 	//private ArrayList<List> exameToFront;
 	
-	HashMap<String, List> mapExame = new HashMap<String, List>();
+	
 //	private Map<String, Object> map;
 //	private List<String> keyList = new ArrayList<String>(map.keySet());
+	
+	HashMap<String, List> mapExame;
 	
 	@SuppressWarnings("rawtypes")
 	private ArrayList<List> exame;
@@ -52,11 +58,12 @@ public class GenerateExam {
 	@PostConstruct
 	public void init() {
 		
-		disciplina();
+		disciplina(3);
+		
 	}
 	
 	@SuppressWarnings("rawtypes")
-	public int[][] disciplina() {
+	public void disciplina(int numExames) {
 		
 		disciplinas[0] = "port";
 		disciplinas[1] = "afo";
@@ -67,66 +74,66 @@ public class GenerateExam {
 		disciplinas[6] = "dirConst";
 		disciplinas[7] = "dirAdm";
 
-		exame = new ArrayList<List>();
-
-		for(int i = 0; i<disciplinas.length; i ++) {
+		//exame = new ArrayList<List>();
+		
+		for(int x = 0; x < 2;x++) {
 			
-			switch (disciplinas[i]) {
+			mapExame = new HashMap<String, List>();
+			
+			//##########################
+			for(int i = 0; i<disciplinas.length; i ++) {
+				
+				switch (disciplinas[i]) {
 
-			case "port":
-				
-				List items = randGenerate(portugues,portRange);
-				//exame.add(items);
-				mapExame.put("Língua Portuguesa", items);
-				//exame.set(0, items);
-				break;
-				
-			case "afo":
-				List itemsAfo = randGenerate(afo,afoRange);
-				//exame.add(itemsAfo);
-				mapExame.put("AFO", itemsAfo);
-				break;
-//				
-//			case "info":
-//				System.out.println("Exec info");
-//				List itemsInfo = randGenerate(info,infoRange);
-//				exame.add(itemsInfo);
-//				break;
-//
-//			case "rlm":
-//				System.out.println("Exec rlm");
-//				List itemsRlm = randGenerate(rlm,rlmRange);
-//				exame.add(itemsRlm);
-//				break;
-//				
-//			case "dirPen":
-//				System.out.println("Exec dirPen");
-//				List itemsDp = randGenerate(dirPen,dirPenRange);
-//				exame.add(itemsDp);
-//				break;
-//				
-//			case "dirProc":
-//				System.out.println("Exec dirProc");
-//				List itemsDirProc = randGenerate(dirProc,dirProcRange);
-//				exame.add(itemsDirProc);
-//				break;
-//				
-//			case "dirConst":
-//				System.out.println("Exec dirConst");
-//				List itemsdirConst = randGenerate(dirConst,dirConstRange);
-//				exame.add(itemsdirConst);
-//				//exame.set(1, itemsdirConst);
-//				break;
-//				
-//			case "dirAdm":
-//				System.out.println("Exec dirAdm");
-//				List itemsdirAdm = randGenerate(dirAdm,dirAdmRange);
-//				exame.add(itemsdirAdm);
-//				break;
+				case "port":
+					List items = randGenerate(portugues,portRange);
+					//exame.add(items);
+					mapExame.put("Língua Portuguesa", items);
+					//exame.set(0, items);
+					break;
+					
+				case "afo":
+					List itemsAfo = randGenerate(afo,afoRange);
+					//exame.add(itemsAfo);
+					mapExame.put("AFO", itemsAfo);
+					break;
+					
+				case "info":
+					List itemsInfo = randGenerate(info,infoRange);
+					mapExame.put("Informática", itemsInfo);
+					break;
+
+				case "rlm":
+					List itemsRlm = randGenerate(rlm,rlmRange);
+					mapExame.put("RLM", itemsRlm);
+					break;
+					
+				case "dirPen":
+					List itemsDp = randGenerate(dirPen,dirPenRange);
+					//exame.add(itemsDp);
+					mapExame.put("Dir Penal",itemsDp);
+					break;
+					
+				case "dirProc":
+					List itemsDirProc = randGenerate(dirProc,dirProcRange);
+					mapExame.put("Dir Processual",itemsDirProc);
+					break;
+					
+				case "dirConst":
+					List itemsdirConst = randGenerate(dirConst,dirConstRange);
+					mapExame.put("Dir Const",itemsdirConst);
+					break;
+					
+				case "dirAdm":
+					List itemsdirAdm = randGenerate(dirAdm,dirAdmRange);				
+					mapExame.put("Dir Adminis",itemsdirAdm);
+					break;
+				}
 			}
+			//##########################
+			multipleExam.add(mapExame);
 		}
 		
-		return prova;
 	}
 	
 	/*
@@ -158,17 +165,12 @@ public class GenerateExam {
 		return items;
 	}
 	
-	public ArrayList<List> getExame(){
-		return exame;
-	}
-	
-	public String[] getDisciplinas(){
-		return disciplinas;
-	}
-	
-	//mapExame
 	public HashMap<String, List> getMapExame(){
 		return mapExame;
+	}
+	
+	public ArrayList<HashMap> getMultipleExam(){
+		return multipleExam;
 	}
 
 }
