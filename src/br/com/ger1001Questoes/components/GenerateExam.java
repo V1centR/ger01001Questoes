@@ -1,12 +1,9 @@
 package br.com.ger1001Questoes.components;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -39,17 +36,7 @@ public class GenerateExam {
 	private Integer dirAdmRange = 60;
 	
 	String[] disciplinas = new String[8];
-	
-	private ArrayList<HashMap> multipleExam = new ArrayList<HashMap>(); 
-	
-	//int[][] prova = new int[8][30];
-	
-	//private ArrayList<List> exameToFront;
-	
-	
-//	private Map<String, Object> map;
-//	private List<String> keyList = new ArrayList<String>(map.keySet());
-	
+	private ArrayList<HashMap> multipleExam = new ArrayList<HashMap>();
 	HashMap<String, List> mapExame;
 	
 	@SuppressWarnings("rawtypes")
@@ -76,7 +63,7 @@ public class GenerateExam {
 
 		//exame = new ArrayList<List>();
 		
-		for(int x = 0; x < 2;x++) {
+		for(int x = 0; x < 4;x++) {
 			
 			mapExame = new HashMap<String, List>();
 			
@@ -150,13 +137,13 @@ public class GenerateExam {
 		HashSet<Integer> itemsLista = new HashSet<Integer>();
 
 		int currentItem = 0;
-		Random randomnum = new Random();
 		
 		for(int i = 0; i<qtd; i++) {
-			currentItem = randomnum.nextInt(range);
 			
-			while(itemsLista.contains(currentItem) || itemsLista.contains(0)) {
-				currentItem = randomnum.nextInt(range);
+			currentItem = (int) (Math.random()*(range - 1) + 1);
+			
+			while(itemsLista.contains(currentItem)) {
+				currentItem = (int) (Math.random()*(range - 1) + 1);
 			}
 			itemsLista.add(currentItem);
 			items.add(currentItem);
