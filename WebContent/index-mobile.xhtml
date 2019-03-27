@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:c="http://java.sun.com/jsp/jstl/core"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+   <head>
+   <STYLE type="text/css">
+	   body{ font-family: Arial, Helvetica, sans-serif;}
+	   table{border: 1px solid #969696; border-collapse: collapse;}
+	   table, th, td {border: 1px solid #969696; margin: 0px; padding: 0px; padding-top: 12px; padding-left: 8px;}
+	   
+	   table tr td.questionBox{ padding-top: 5px; margin-top: 2px; padding-bottom: 2px;}
+	   table tr td div.numberBox{ padding-top: 15px;}
+	   
+	   .checkBox{border: 2px solid #000; height: 40px; width: 40px;}
+	   .numberBox{ width: 30px; font-weight: bold;}
+	   .labelColumn{ width: 100px; min-width: 80px;}
+   </STYLE>
+   </head>
+   <h:body>
+      <p:repeat var="exames" value="#{generateExam.multipleExam}">
+         <!-- <ui:repeat var="item" value="#{exames.entrySet().toArray()}"></ui:repeat> -->
+         <table>
+            <tbody>
+               <tr>
+                  <ui:repeat var="item" value="#{exames.entrySet().toArray()}">
+                     <td class="labelColumn">
+                        <strong><h:outputText value="#{item.key}" /></strong>
+                     </td>
+                  </ui:repeat>
+               </tr>
+               <tr>
+	               <ui:repeat var="item" value="#{exames.entrySet().toArray()}">
+		               
+		                  <td class="questionBox" valign="top">
+			                  <ui:repeat var="questions" value="#{item.value}">
+				                  <div class="numberBox" style="position: relative; float: left;">
+				                  	#{questions}
+				                  </div>
+				                  <div class="checkBox" style="position: relative; float: left;">
+				                  </div><br/>
+				                  
+			                  </ui:repeat>
+		                  </td>
+		               
+	               </ui:repeat>
+               
+              </tr>
+               
+               
+               <!-- <p:dataTable var="item" value="#{exames.entrySet().toArray()}"></p:dataTable>  -->
+            </tbody>
+         </table>
+         <br/>
+      </p:repeat>
+   </h:body>
+</html>
