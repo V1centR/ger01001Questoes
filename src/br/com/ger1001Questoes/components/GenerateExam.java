@@ -1,6 +1,8 @@
 package br.com.ger1001Questoes.components;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -145,6 +147,8 @@ public class GenerateExam {
 			itemsLista.add(currentItem);
 			items.add(currentItem);
 		}
+		
+		Collections.sort(items);
 		
 		return items;
 	}
