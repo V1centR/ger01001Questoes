@@ -19,6 +19,8 @@
    </STYLE>
    </head>
    <h:body>
+<div style="width: 100%;">
+   <div style="margin-left: 40px; position: relative;">
       <p:repeat var="exames" value="#{generateExam.multipleExam}">
          <!-- <ui:repeat var="item" value="#{exames.entrySet().toArray()}"></ui:repeat> -->
          <table>
@@ -45,14 +47,13 @@
 		                  </td>
 		               
 	               </ui:repeat>
-               
               </tr>
-               
-               
                <!-- <p:dataTable var="item" value="#{exames.entrySet().toArray()}"></p:dataTable>  -->
             </tbody>
          </table>
          <br/>
       </p:repeat>
+      </div>
+      </div>
    </h:body>
 </html>

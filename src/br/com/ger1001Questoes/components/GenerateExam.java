@@ -45,8 +45,7 @@ public class GenerateExam {
 	@PostConstruct
 	public void init() {
 		
-		disciplina(3);
-		
+		disciplina(4);
 	}
 	
 	@SuppressWarnings("rawtypes")
@@ -60,10 +59,8 @@ public class GenerateExam {
 		disciplinas[5] = "dirProc";
 		disciplinas[6] = "dirConst";
 		disciplinas[7] = "dirAdm";
-
-		//exame = new ArrayList<List>();
 		
-		for(int x = 0; x < 4;x++) {
+		for(int x = 0; x < numExames;x++) {
 			
 			mapExame = new HashMap<String, List>();
 			
