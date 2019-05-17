@@ -44,11 +44,11 @@ public class GenerateExam {
 	@SuppressWarnings("rawtypes")
 	private ArrayList<List> exame;
 	
-//	@PostConstruct
-//	public void main() {
-//		
-//		disciplina(4);
-//	}
+	@PostConstruct
+	public void main() {
+		
+		disciplina(4);
+	}
 	
 	@SuppressWarnings("rawtypes")
 	public void disciplina(int numExames) {
