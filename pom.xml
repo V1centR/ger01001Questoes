@@ -52,7 +52,7 @@
                <failOnMissingWebXml>false</failOnMissingWebXml>
                <archive>
 			    	<manifest>
-					<mainClass>br.com.ger1001Questoes.components.App</mainClass>
+					<mainClass>main.webapp.App</mainClass>
 			    	</manifest>
 	  			</archive>
             </configuration>
