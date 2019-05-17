@@ -1,7 +1,6 @@
 package br.com.ger1001Questoes.components;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
